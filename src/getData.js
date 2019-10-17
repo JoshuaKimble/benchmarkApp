@@ -13,8 +13,8 @@ function massage(data) {
 function getData() {
     const promises = [];
     
-    for (let index = 0; index < 15; index++) {
-        promises.push(fetch('https://jsonplaceholder.typicode.com/posts').then(response => response.json()).then(data => massage(data)));
+    for (let index = 0; index < 100; index++) {
+        promises.push(fetch('https://jsonplaceholder.typicode.com/posts').then(response => response.json()).then(massage));
     }
     
     return Promise.all(promises);

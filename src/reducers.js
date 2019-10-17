@@ -6,10 +6,10 @@ function entities(state = {}, action) {
 }
 
 export function getStuff(state) {
-    return state.stuff;
+    return state.Stuff || [];
 }
 export function getMessage(state) {
-    return state.msg;
+    return state.Msg || '';
 }
 
 export default entities;

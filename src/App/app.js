@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getStuff, getMessage } from '../reducers';
 
-function App({ stuff, msg }) {
+function App({ Stuff, Msg }) {
     return (
         <div style={{padding:'15px'}}>
-            <h1>{msg}</h1>
-            {stuff.map((list, index) => (
+            <h1>{Msg}</h1>
+            {Stuff.map((list, index) => (
                 <div key={index} style={{width:'10%', float: 'left', padding: '15px'}}>
                     <h2>Stuff index: {`${index}`}</h2>
                     {list.map((item, pos) => (
@@ -23,8 +23,8 @@ function App({ stuff, msg }) {
 }
 
 const mapStateToProps = state => ({
-    msg: getMessage(state),
-    stuff: getStuff(state)
+    Msg: getMessage(state),
+    Stuff: getStuff(state)
 });
 
 export default connect(mapStateToProps)(App);
